@@ -1,0 +1,54 @@
+﻿@page
+@model HandsonModel.models.Pages.Bookstore
+@{
+}
+<div class="container">
+    <form method="post">
+        <table>
+            <tr>
+                <th>Book Id</th>
+                <td>
+                    <input type="number" asp-for="b.Id" required />
+                </td>
+            </tr>
+            <tr>
+                <th>Book Name</th>
+                <td>
+                    <input type="text" asp-for="b.Name" required />
+                </td>
+            </tr>
+            <tr>
+                <th>Book Price</th>
+                <td>
+                    <input type="number" asp-for="b.Price" required />
+                </td>
+            </tr>
+            <tr>
+                <th>Book Language</th>
+                <td>
+                    
+                    <select asp-for="b.Language">
+                       <option value="English">English</option>
+                       <option value="Hindi">Hindi</option>
+                       <option value="Telugu">Telugu</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <th>Book Author</th>
+                <td>
+                    <input type="text" asp-for="b.Author" required />
+                </td>
+            </tr>
+        </table>
+        <input type="submit" value="Add" />
+    </form>
+
+    <h2>Details for Submitted Form</h2>
+    <ul>
+        @foreach (var item in Model.List)
+        {
+            <li>@item.Id | @item.Name | @item.Price | @item.Language | @item.Author</li>
+        }
+    </ul>
+</div>

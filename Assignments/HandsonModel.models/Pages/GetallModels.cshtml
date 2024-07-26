@@ -1,0 +1,44 @@
+﻿@page
+@model HandsonModel.models.Pages.GetallModelsModel
+@{
+}
+<div class="container">
+    <h3> text_allign ="center">table contents</h3>
+    <form method ="post"> 
+        <table class=" table">
+            <tr>
+                <td> Id</td>
+                <td> 
+                    <input type ="number" asp-for="@Model.product .Id" />
+
+                </td>
+            </tr>
+        </table>
+   </form>
+   
+    <table class=" table table-bordered">
+        <thead>
+            <tr> 
+                 
+                <th> ID</th>
+                <th> Name</th>
+                <th> price</th>
+                <th> stock</th>
+                
+
+               
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.List)
+            {
+                <tr>
+                    <td> @item.Id</td>
+                    <td> @item Name</td>
+                    <td> @item price</td>
+                    <td> @item stock</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
